@@ -1,6 +1,6 @@
 package exercice;
 
-public class Cartes {
+public class Carte {
 //defini par couleur et numéro de 1 à 13
 	// stocker les 52 cartes dans un tableau
 	// class perosnne
@@ -8,7 +8,7 @@ public class Cartes {
 	private int valeur;
 	private String couleur;
 
-	public Cartes(int val, String coul) {
+	public Carte(int val, String coul) {
 		this.valeur = val;
 		this.couleur = coul;
 	}

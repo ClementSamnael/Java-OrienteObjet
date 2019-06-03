@@ -8,9 +8,9 @@ public class Cartes {
 	private int valeur;
 	private String couleur;
 
-	public Cartes(int valeur, String couleur) {
-		this.valeur = valeur;
-		this.couleur = couleur;
+	public Cartes(int val, String coul) {
+		this.valeur = val;
+		this.couleur = coul;
 	}
 
 	public int getValeur() {

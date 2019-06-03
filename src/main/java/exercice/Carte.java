@@ -1,77 +1,56 @@
 package exercice;
 
+import java.util.Random;
+
 public class Carte {
-//defini par couleur et numéro de 1 à 13
-	// stocker les 52 cartes dans un tableau
-	// melanger les cartes
-	// diviser les cartes en deux joueurs
-	// class perosnne
 
-	/** Rang de la carte. */
-	public enum Rang {
-		DEUX, TROIS, QUATRE, CINQ, SIX, SEPT, HUIT, NEUF, DIX, VALET, DAME, ROI, AS
+	private String color;
+	private int value;
+
+	public Carte(String color, int value) {
+		this.color = color;
+		this.value = value;
 	}
 
-	/** Couleur de la carte. */
-	public enum Couleur {
-		PIQUE, COEUR, CARREAU, TREFLE
+	public String getColor() {
+		return color;
 	}
 
-	/** Le rang de la carte. */
-	private Rang rang;
-
-	/** La couleur de la carte. */
-	private Couleur couleur;
-
-	/*
-	 * Constructeur
-	 */
-	public Carte(Rang rang, Couleur couleur) {
-		this.rang = rang;
-		this.couleur = couleur;
+	public void setColor(String color) {
+		this.color = color;
 	}
 
-	/*
-	 * Getter
-	 */
-	public Rang getRang() {
-		return rang;
+	public int getValue() {
+		return value;
 	}
 
-	public Couleur getCouleur() {
-		return couleur;
+	public void setValue(int value) {
+		this.value = value;
 	}
 
-	/*
-	 * Setter
-	 */
-	public void setRang(Rang rang) {
-		this.rang = rang;
+	public static Carte[] init() {
+		Carte[] cards = new Carte[52];
+		String color[] = { "Pique", "Coeur", "Trefle", "Carreau" };
+		int cursor = 0;
+		for (int i = 0; i < color.length; i++) {
+			for (int j = 1; j <= 13; j++) {
+				cards[cursor++] = new Carte(color[i], j);
+			}
+		}
+		return cards;
 	}
 
-	public void setCouleur(Couleur couleur) {
-		this.couleur = couleur;
+	public static void exchange(Carte[] cards) {
+		Random random = new Random();
+		int nb1 = random.nextInt(cards.length);
+		int nb2 = random.nextInt(cards.length);
+		Carte tmp = cards[nb1];
+		cards[nb1] = cards[nb2];
+		cards[nb2] = tmp;
 	}
 
-//	public Carte(int val, String coul) {
-//		this.valeur = val;
-//		this.couleur = coul;
-//	}
-//
-//	public int getValeur() {
-//		return valeur;
-//	}
-//
-//	public void setValeur(int valeur) {
-//		this.valeur = valeur;
-//	}
-//
-//	public String getCouleur() {
-//		return couleur;
-//	}
-//
-//	public void setCouleur(String couleur) {
-//		this.couleur = couleur;
-//	}
-
+	@Override
+	public String toString() {
+		return this.value + " - " + this.color;
+	}
 }

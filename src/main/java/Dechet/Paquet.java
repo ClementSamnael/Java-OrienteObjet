@@ -1,7 +1,8 @@
-package exercice;
+package Dechet;
 
 import java.util.Random;
 
+import exercice.Carte;
 import exercice.Carte.Couleur;
 import exercice.Carte.Rang;
 

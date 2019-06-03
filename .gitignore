@@ -1,4 +1,5 @@
 target/
-classpath
+.classpath
 .settings
 .project
+.gitignore.swp

@@ -30,5 +30,4 @@ public class PlusOuMoins {
 	public static void main(String[] args) {
 		plusOuMoins();
 	}
-
 }

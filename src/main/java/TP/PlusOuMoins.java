@@ -11,19 +11,20 @@ public class PlusOuMoins {
 		Random rand = new Random();
 		int nbATrouver = rand.nextInt(100 - 0 + 1) + 0;
 		Scanner scanner = new Scanner(System.in);
-		
+
 		System.out.println("Entrez un nombre entre 0 et 100 :");
 		nbUser = scanner.nextInt();
-		while(nbATrouver != nbUser) {
-			if(nbATrouver < nbUser) {
+		while (nbATrouver != nbUser) {
+			if (nbATrouver < nbUser) {
 				System.out.println("Trop Grand");
-			}else{
+			} else {
 				System.out.println("Trop Petit");
 			}
 			nbUser = scanner.nextInt();
-			cpt ++;
+			cpt++;
 		}
-		System.out.println("Le nombre a trouver est bien : " + nbATrouver +". Vous l'avez fait en "  + cpt + " essai(s)" );
+		System.out
+				.println("Le nombre a trouver est bien : " + nbATrouver + ". Vous l'avez fait en " + cpt + " essai(s)");
 		scanner.close();
 	}
 

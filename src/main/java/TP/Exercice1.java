@@ -44,7 +44,7 @@ public class Exercice1 {
 	// Palindrome
 	public static boolean isPalindrome(String palindrome) {
 		palindrome = palindrome.toLowerCase();
-		for (int i = 0; i <= palindrome.length()/2; i++) {
+		for (int i = 0; i <= palindrome.length() / 2; i++) {
 			if (palindrome.charAt(i) != palindrome.charAt(palindrome.length() - (i + 1)))
 				return false;
 		}
@@ -63,10 +63,11 @@ public class Exercice1 {
 		}
 		return true;
 	}
-	//Correction palindrome
+
+	// Correction palindrome
 	public static boolean isPldrm(String chaine) {
-		for(int i=0;i<chaine.length()/2; i++) {
-			if(chaine.charAt(i) != chaine.charAt(chaine.length() - 1 - i))
+		for (int i = 0; i < chaine.length() / 2; i++) {
+			if (chaine.charAt(i) != chaine.charAt(chaine.length() - 1 - i))
 				return false;
 		}
 		return true;

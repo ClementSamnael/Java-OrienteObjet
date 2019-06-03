@@ -20,7 +20,7 @@ public class Personne {
 		this.name = name.toUpperCase();
 	}
 
-	// p => paramètre donc this.comparer(paramètre)
+	// Personne p => paramètre donc this.comparer(paramètre)
 	public void comparer(Personne p) {
 		if (p.name.equals(this.name)) {
 			System.out.println("Homonyme !");

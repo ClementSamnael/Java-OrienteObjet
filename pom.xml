@@ -7,6 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
+		<soruce.version>1.8</soruce.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<junit.version>3.8.1</junit.version>
 	</properties>

@@ -12,7 +12,7 @@ public class Exercice1 {
 	public static boolean isPremier(int premier) {
 		int div = 2;
 		boolean test = true;
-		if(premier == 1) {
+		if(premier <= 1) {
 			return false;
 		}
 		while((test) && (div<premier)) {
@@ -24,12 +24,25 @@ public class Exercice1 {
 		return true;
 	}
 	
+	//Correction
+	public static boolean isPrime(int number) {
+		if(number<=1) {
+			return false;
+		}
+		for(int i = 2; i<number/2;i++) {
+			if(number%i == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	
 	public static void main(String[] args) {
 		//System.out.println(generateRandom(0,50));
-		System.out.println(isPremier(1));
-		System.out.println(isPremier(2));
-		System.out.println(isPremier(12));
-		System.out.println(isPremier(77));
+		System.out.println(isPrime(5));
+		System.out.println(isPremier(5));
+
 	}
 
 }

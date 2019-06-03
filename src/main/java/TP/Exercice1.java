@@ -63,12 +63,20 @@ public class Exercice1 {
 		}
 		return true;
 	}
+	//Correction palindrome
+	public static boolean isPldrm(String chaine) {
+		for(int i=0;i<chaine.length()/2; i++) {
+			if(chaine.charAt(i) != chaine.charAt(chaine.length() - 1 - i))
+				return false;
+		}
+		return true;
+	}
 
 	public static void main(String[] args) {
 		// System.out.println(generateRandom(0,50));
 		System.out.println(isPalindrome("KAYAK"));
-		System.out.println(isPalindrome("LaaL"));
-		System.out.println(isPalindrome("nAwAk"));
+		System.out.println(isPldrm("LaaL"));
+		System.out.println(isPldrm("nAwAk"));
 	}
 
 }

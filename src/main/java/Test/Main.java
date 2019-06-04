@@ -14,6 +14,7 @@ public class Main {
 		uneVoiture.afficherVoiture();
 		uneVoiture.coutLocation();
 		uneVoiture.age();
+
 		/*
 		 * Test sur un Camion
 		 */
@@ -21,6 +22,7 @@ public class Main {
 		unCamion.peutTransporterVolume(7.0F);
 		unCamion.coutLocation();
 		unCamion.age();
+
 		/*
 		 * Test sur un Autocar
 		 */

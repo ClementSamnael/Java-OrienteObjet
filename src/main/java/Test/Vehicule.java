@@ -1,7 +1,9 @@
 package Test;
 
 public class Vehicule {
-
+	/*
+	 * Variables
+	 */
 	private final int ANNEE_COURANTE = 2019;
 	protected String modele;
 	protected int annee;

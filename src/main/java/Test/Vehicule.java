@@ -1,6 +1,6 @@
 package Test;
 
-public class Vehicule {
+public abstract class Vehicule {
 	/*
 	 * Variables
 	 */
@@ -10,21 +10,10 @@ public class Vehicule {
 	protected float prixAchat;
 	protected String numImma;
 	protected char permis;
-	protected float volStock;
-	private int age;
 
 	/*
 	 * Constructeur classe mère
 	 */
-	public Vehicule(String modele, int annee, float prixAchat, String numImma, char permis, float volStock) {
-		this.modele = modele;
-		this.annee = annee;
-		this.prixAchat = prixAchat;
-		this.numImma = numImma;
-		this.permis = permis;
-		this.volStock = volStock;
-	}
-
 	public Vehicule(String modele, int annee, float prixAchat, String numImma, char permis) {
 		this.modele = modele;
 		this.annee = annee;
@@ -56,10 +45,6 @@ public class Vehicule {
 		return permis;
 	}
 
-	public float getVolStock() {
-		return volStock;
-	}
-
 	/*
 	 * Setter
 	 */
@@ -83,22 +68,16 @@ public class Vehicule {
 		this.permis = parmis;
 	}
 
-	public void setVolStock(float volStock) {
-		this.volStock = volStock;
-	}
-
 	/*
 	 * Affiche l'âge du véhicule
 	 */
-	public void age() {
-		int age = this.ANNEE_COURANTE - this.annee;
-		System.out.println(age + " ans");
+	public int age() {
+		return this.ANNEE_COURANTE - this.annee;
 	}
 
 	@Override
 	public String toString() {
-		return this.modele + " - " + this.annee + " - " + this.prixAchat + "€ - " + this.numImma + " - " + this.permis
-				+ " - " + this.volStock + "m³";
+		return this.modele + " - " + this.annee + " - " + this.prixAchat + "€ - " + this.numImma + " - " + this.permis;
 	}
 
 	/*
@@ -109,23 +88,12 @@ public class Vehicule {
 	}
 
 	/*
-	 * Peut transporter un volume donné
-	 */
-	public void peutTransporterVolume(float volATransporter) {
-		if (volATransporter > this.volStock) {
-			System.out.println("Volume trop grand");
-		} else {
-			System.out.println("Volume OK");
-		}
-	}
-
-	/*
 	 * calcule le coût quotidien de location d'un véhicule en fonction de l'âge de
 	 * celui-ci
 	 */
 	public void coutLocation() {
 		float coutLocation;
-		if (this.age < 1) {
+		if (this.age() < 1) {
 			coutLocation = this.prixAchat / 200.0F;
 		} else {
 			coutLocation = this.prixAchat / 250.0F;

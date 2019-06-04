@@ -1,6 +1,6 @@
 package exemple;
 
-public class Animal {
+public abstract class Animal {
 
 	private String nom;
 
@@ -11,6 +11,12 @@ public class Animal {
 
 	public void getType() {
 		System.out.println("Je suis un animal");
+	}
+
+	public abstract void cri();
+
+	public void test() {
+		System.out.println("test");
 	}
 
 }

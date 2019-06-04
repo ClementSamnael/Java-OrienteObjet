@@ -40,16 +40,11 @@ public class Voiture extends Vehicule {
 		this.radio = false;
 	}
 
-	@Override
-	public String toString() {
-		return this.modele + " - " + this.annee + " - " + this.prixAchat + "€ - " + this.numImma + " - " + this.permis;
-	}
-
 	/*
 	 * Afficher description voiture
 	 */
 	public void afficherVoiture() {
-		String affVoit = this.toString();
+		String affVoit = super.toString();
 		boolean afficheRadio = this.radio;
 		System.out.println(affVoit + " - Autoradio : " + afficheRadio);
 	}

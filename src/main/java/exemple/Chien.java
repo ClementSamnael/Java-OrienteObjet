@@ -16,4 +16,9 @@ public class Chien extends Animal {
 		System.out.println("Je suis un chien");
 		super.getType();
 	}
+
+	@Override
+	public void cri() {
+		System.out.println("Le chien crie !");
+	}
 }

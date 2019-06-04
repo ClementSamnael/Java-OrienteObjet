@@ -1,6 +1,6 @@
 package Test;
 
-public class Autocar extends Vehicule {
+public class Autocar extends Camion {
 
 	private int nbPass; // nombre de passager
 
@@ -30,7 +30,7 @@ public class Autocar extends Vehicule {
 	 * Peut transporter un nombre de passagers
 	 */
 	public void peutTransporterPassagers(int nbPassagers, float volBaggages) {
-		if (nbPassagers > this.nbPass && super.volStock < volBaggages) {
+		if (nbPassagers > this.nbPass && super.volStock < nbPassagers * volBaggages) {
 			System.out.println("Problème de taille");
 		} else {
 			System.out.println("Nombre de passagers et de baggages OK");

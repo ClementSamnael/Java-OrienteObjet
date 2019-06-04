@@ -33,7 +33,7 @@ public class Autocar extends Vehicule {
 		if (nbPassagers > this.nbPass && super.volStock < volBaggages) {
 			System.out.println("Problème de taille");
 		} else {
-			System.out.println("Nombre de passagers et de baggage OK");
+			System.out.println("Nombre de passagers et de baggages OK");
 		}
 	}
 

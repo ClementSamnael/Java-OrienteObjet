@@ -88,8 +88,9 @@ public class Vehicule {
 	/*
 	 * Affiche l'âge du véhicule
 	 */
-	public int age() {
-		return age = this.ANNEE_COURANTE - this.annee;
+	public void age() {
+		int age = this.ANNEE_COURANTE - this.annee;
+		System.out.println(age + " ans");
 	}
 
 	@Override

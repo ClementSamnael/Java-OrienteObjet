@@ -9,4 +9,9 @@ public class Chat extends Animal {
 	public void miaule() {
 		System.out.println("Il miaule !");
 	}
+
+	@Override
+	public void getType() {
+		System.out.println("Je suis un chat");
+	}
 }

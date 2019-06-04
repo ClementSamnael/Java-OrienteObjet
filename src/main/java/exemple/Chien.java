@@ -10,4 +10,10 @@ public class Chien extends Animal {
 	public void aboie() {
 		System.out.println("Il aboit !");
 	}
+
+	@Override
+	public void getType() {
+		System.out.println("Je suis un chien");
+		super.getType();
+	}
 }

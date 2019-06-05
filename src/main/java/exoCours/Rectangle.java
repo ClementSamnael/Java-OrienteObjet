@@ -8,13 +8,13 @@ public class Rectangle extends Forme {
 	/*
 	 * Constructeur Rectangle
 	 */
-	public Rectangle(float centre, float longueur, float largeur) {
+	public Rectangle(Point centre, float longueur, float largeur) {
 		super(centre);
 		this.longueur = longueur;
 		this.largeur = largeur;
 	}
 
-	// --------Getter-----------------------/
+	// --------GETTER RECTANGLE-----------------------/
 
 	public float getLongueur() {
 		return longueur;
@@ -40,4 +40,10 @@ public class Rectangle extends Forme {
 		return "Rectangle";
 	}
 
+	// -------MÉTHODES-------------------------/
+	public boolean estCarre() {
+		if (this.longueur == this.largeur)
+			return true;
+		return false;
+	}
 }

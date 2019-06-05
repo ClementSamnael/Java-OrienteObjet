@@ -2,18 +2,15 @@ package exoCours;
 
 public abstract class Forme {
 
-	protected float centre;
+	protected Point centre;
 
-	// --------------------------------/
-	/*
-	 * Constructeur Forme
-	 */
-	public Forme(float centre) {
+	// -----------Constructeur Forme---------------------/
+	public Forme(Point centre) {
 		this.centre = centre;
 	}
 
-	// --------------Getter Forme------------------/
-	public float getCentre() {
+	// --------------GETTER Forme------------------/
+	public Point getCentre() {
 		return centre;
 	}
 
@@ -23,16 +20,16 @@ public abstract class Forme {
 		return "Forme de type : " + getType() + "Perimetre : " + getPerimetre() + " Aire : " + getAire();
 	}
 
-	// --------------Methodes abstraites------------------/
+	// --------------MÉTHODES ABSTRAITES------------------/
 	public abstract float getAire();
 
 	public abstract float getPerimetre();
 
 	public abstract String getType();
 
-	// --------------Methodes------------------/
-	public boolean memeOrigine(float centreFig) {
-		if (this.centre == centreFig)
+	// --------------MÉTHODES------------------/
+	public boolean memeOrigine(Point centreFig) {
+		if ((this.centre.getX() == (centreFig.getX())) && (this.centre.getY() == (centreFig.getY())))
 			return true;
 		return false;
 	}

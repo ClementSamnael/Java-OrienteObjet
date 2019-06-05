@@ -8,12 +8,12 @@ public class Cercle extends Forme {
 	/*
 	 * Constructeur Cercle
 	 */
-	public Cercle(float centre, float rayon) {
+	public Cercle(Point centre, float rayon) {
 		super(centre);
 		this.rayon = rayon;
 	}
 
-	// ----------Getter---------------------/
+	// ----------GETTER CERCLE---------------------/
 
 	public float getRayon() {
 		return rayon;

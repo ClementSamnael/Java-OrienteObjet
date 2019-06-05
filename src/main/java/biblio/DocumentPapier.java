@@ -4,14 +4,16 @@ public abstract class DocumentPapier extends Document {
 
 	protected int nbPages;
 
+	// -------------------------------------------------/
 	/*
 	 * Constructeur
 	 */
-	public DocumentPapier(String titre, String auteur, boolean empruntable, float coutDoc, int nbPages) {
-		super(titre, auteur, empruntable, coutDoc);
+	public DocumentPapier(String titre, String auteur, boolean empruntable, float coutDoc, int nbPages, Type doc) {
+		super(titre, auteur, empruntable, coutDoc, doc);
 		this.nbPages = nbPages;
 	}
 
+	// -------------------------------------------------/
 	/*
 	 * Getter
 	 */
@@ -19,6 +21,7 @@ public abstract class DocumentPapier extends Document {
 		return nbPages;
 	}
 
+	// -------------------------------------------------/
 	/*
 	 * Setter
 	 */
@@ -26,12 +29,10 @@ public abstract class DocumentPapier extends Document {
 		this.nbPages = nbPages;
 	}
 
-	/*
-	 * Calcul du coût
-	 */
+	// --------------MÉTHODES-----------------------------------/
+	@Override
 	public float coutDocumentEcrit() {
-		super.coutDocEcrit = 0.5F * this.nbPages;
-		return super.coutDocEcrit;
+		return this.coutDocEcrit = (float) (0.5 * nbPages);
 	}
 
 }

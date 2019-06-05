@@ -1,6 +1,6 @@
 package biblio;
 
-public class Document {
+public abstract class Document {
 
 	/*
 	 * variables
@@ -9,19 +9,20 @@ public class Document {
 	protected String auteur;
 	protected boolean empruntable;
 	protected float coutDocEcrit;
-	final protected int CONSTANTE_COUT_VIDEO = 70;
+	protected Type type;
 
 	/*
 	 * Constructeur de doc
 	 */
-	public Document(String titre, String auteur, boolean empruntable, float coutDocEcrit) {
-		super();
+	public Document(String titre, String auteur, boolean empruntable, float coutDocEcrit, Type type) {
 		this.titre = titre;
 		this.auteur = auteur;
 		this.empruntable = empruntable;
 		this.coutDocEcrit = coutDocEcrit;
+		this.type = type;
 	}
 
+	// -------------------------------------------------/
 	/*
 	 * Getter
 	 */
@@ -41,10 +42,7 @@ public class Document {
 		return coutDocEcrit;
 	}
 
-	public int getCONSTANTE_COUT_VIDEO() {
-		return CONSTANTE_COUT_VIDEO;
-	}
-
+	// -------------------------------------------------/
 	/*
 	 * Setter
 	 */
@@ -64,10 +62,24 @@ public class Document {
 		this.coutDocEcrit = coutDocEcrit;
 	}
 
-	/*
-	 * Ajouter un Document Pas bon
-	 */
-	public Document ajoutDoc(Document doc) {
-		return doc = new Document(titre, auteur, empruntable, coutDocEcrit);
+	public void setType(Type type) {
+		this.type = type;
 	}
+
+	// -------------------MÉTHODES ABSTRAITES------------------------------/
+	/*
+	 * Savoir si un documrnt est empruntable ou non
+	 */
+	public abstract boolean estEmpruntable();
+
+	/*
+	 * Connaitre le cout d'un doc
+	 */
+	public abstract float coutDocumentEcrit();
+
+	/*
+	 * Récupérer le type de document
+	 */
+	public abstract String getTypeDocument();
+
 }

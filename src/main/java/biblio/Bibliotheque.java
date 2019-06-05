@@ -45,5 +45,6 @@ public class Bibliotheque {
 				nbDVD++;
 			}
 		}
+		return nbDVD;
 	}
 }

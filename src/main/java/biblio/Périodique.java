@@ -11,9 +11,8 @@ public class Périodique extends DocumentPapier {
 	/*
 	 * Constructeur
 	 */
-	public Périodique(String titre, String auteur, boolean empruntable, float coutDoc, int nbPages, int numero,
-			Type type) {
-		super(titre, auteur, empruntable, coutDoc, nbPages, type);
+	public Périodique(String titre, String auteur, float coutDoc, int nbPages, int numero, Type type) {
+		super(titre, auteur, coutDoc, nbPages, type);
 		this.numero = numero;
 	}
 
@@ -36,12 +35,11 @@ public class Périodique extends DocumentPapier {
 	// -----------------MÉTHODES-------------------------------/
 	@Override
 	public boolean estEmpruntable() {
-		return this.empruntable = false;
+		return false;
 	}
 
 	@Override
 	public String getTypeDocument() {
-		return Type.Periodique.getTypeDoc();
+		return Type.Livre.choixType();
 	}
-
 }

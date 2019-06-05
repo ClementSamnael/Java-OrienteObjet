@@ -1,4 +1,4 @@
-package TP;
+package tp;
 
 import java.util.Random;
 import java.util.Scanner;

@@ -1,39 +1,28 @@
 package biblio;
 
-public class Video extends Document {
-
-	final private int CONSTANTE_COUT_VIDEO = 70;
+public final class Video extends Document {
 
 	// -------------------------------------------------/
 	/*
 	 * Constructeur
 	 */
-	public Video(String titre, String auteur, boolean empruntable, float coutDoc, Type doc) {
-		super(titre, auteur, empruntable, coutDoc, doc);
-	}
-
-	// -------------------------------------------------/
-	/*
-	 * Getter
-	 */
-
-	public int getCONSTANTE_COUT_VIDEO() {
-		return CONSTANTE_COUT_VIDEO;
+	public Video(String titre, String auteur, float coutDoc, Type type) {
+		super(titre, auteur, coutDoc, type);
 	}
 
 	// ------------------MÉTHODES-------------------------------/
 	@Override
 	public boolean estEmpruntable() {
-		return this.empruntable = true;
+		return true;
 	}
 
 	@Override
-	public float coutDocumentEcrit() {
-		return this.CONSTANTE_COUT_VIDEO;
+	public float coutDocument() {
+		return 70.0F;
 	}
 
 	@Override
 	public String getTypeDocument() {
-		return Type.DVD.getTypeDoc();
+		return Type.DVD.choixType();
 	}
 }

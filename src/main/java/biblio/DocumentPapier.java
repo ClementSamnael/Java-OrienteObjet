@@ -8,8 +8,8 @@ public abstract class DocumentPapier extends Document {
 	/*
 	 * Constructeur
 	 */
-	public DocumentPapier(String titre, String auteur, boolean empruntable, float coutDoc, int nbPages, Type doc) {
-		super(titre, auteur, empruntable, coutDoc, doc);
+	public DocumentPapier(String titre, String auteur, float coutDoc, int nbPages, Type doc) {
+		super(titre, auteur, coutDoc, doc);
 		this.nbPages = nbPages;
 	}
 
@@ -31,8 +31,8 @@ public abstract class DocumentPapier extends Document {
 
 	// --------------MÉTHODES-----------------------------------/
 	@Override
-	public float coutDocumentEcrit() {
-		return this.coutDocEcrit = (float) (0.5 * nbPages);
+	public float coutDocument() {
+		return this.coutDoc = 0.5f * nbPages;
 	}
 
 }

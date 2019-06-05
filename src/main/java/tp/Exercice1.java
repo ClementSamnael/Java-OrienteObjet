@@ -1,6 +1,6 @@
 //Saisir un nombre n et afficher les n nombres premiers
 //Saisir un nombre parfait (somme des diviseurs égales le nombre. ex : 6 = 3 + 2 +1
-package TP;
+package tp;
 
 import java.util.Random;
 

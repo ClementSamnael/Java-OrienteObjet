@@ -23,7 +23,7 @@ public class Main {
 		biblio.ajoutDoc(periodique);
 		biblio.ajoutDoc(video);
 		biblio.ajoutDoc(livre);
-		System.out.println("Nombre de DVD : " + biblio.getNbDVD());
+		// System.out.println("Nombre de DVD : " + biblio.getnbDVD());
 	}
 
 }

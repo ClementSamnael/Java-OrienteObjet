@@ -7,28 +7,17 @@ public final class Bibliotheque {
 	private ArrayList<Document> doc;
 
 	// -------------------------------------------------/
-	/*
-	 * Constructeur
-	 */
-//	public Bibliotheque(ArrayList<Document> document) {
-//		this.document = new ArrayList<Document>(document);
-//	}
-	/*
-	 * Getter
-	 */
-	// -------------------------------------------------/
 
-//	public ArrayList<Document> getDocument() {
-//		return document;
-//	}
+	// ----------------Constructeur---------------------------------/
+	public Bibliotheque() {
+		this.doc = doc;
+	}
 
-	// -------------------------------------------------/
-	/*
-	 * Setter
-	 */
-//	public void setDocument(ArrayList<Document> document) {
-//		this.document = document;
-//	}
+	// ----------------Getter---------------------------------/
+
+	public ArrayList<Document> getDocument() {
+		return doc;
+	}
 
 	// ---------------MÉTHODES----------------------------------/
 	/*
@@ -41,11 +30,6 @@ public final class Bibliotheque {
 	// ----------------CORRECTIONS---------------------------------/
 	// Correction
 	// private Document[] document;
-
-	// ----------------Constructeur---------------------------------/
-	public Bibliotheque(ArrayList<Document> doc) {
-		this.doc = doc;
-	}
 
 //	public void ajoutDoc(Document doc) {
 //		for (int i = 0; i < doc.length; i++) {
@@ -68,10 +52,16 @@ public final class Bibliotheque {
 //		}
 //		return sum;
 //	}
+
+	public void ajoutDoc(Document documents) {
+		doc.add(documents);
+	}
+
 	public int getnbDVD() {
 		int nbDVD = 0;
+		Type dvd = null;
 		for (int i = 0; i < doc.size(); i++) {
-			if (doc.get(i).getTypeDoc().equals("DVD")) {
+			if (doc.get(i).equals((dvd.getTypeDoc()))) {
 				nbDVD++;
 			}
 		}

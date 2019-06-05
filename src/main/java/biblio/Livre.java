@@ -9,10 +9,21 @@ public class Livre extends DocumentPapier {
 		this.empruntable = empruntable;
 
 	}
+	// -----------------------GETTER--------------------------/
 
-	// -----------------------MÉTHODES--------------------------/
+	public boolean isEmpruntable() {
+		return empruntable;
+	}
+
+	// -----------------------@Override--------------------------/
+	@Override
+	public String toString() {
+		return super.toString() + " - " + this.empruntable;
+	}
+
 	@Override
 	public boolean estEmpruntable() {
 		return false;
 	}
+
 }

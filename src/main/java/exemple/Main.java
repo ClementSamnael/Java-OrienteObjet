@@ -12,13 +12,19 @@ public class Main {
 //		System.out.println(p2.nbInstance);
 //		System.out.println(Personne.nbInstance);
 
-		Chien chien = new Chien("Toto");
-		chien.cri();
-		chien.test();
+//		Chien chien = new Chien("Toto");
+//		chien.cri();
+//		chien.test();
+//
+//		Chat chat = new Chat("Toto");
+//		chat.cri();
+//		chat.test();
 
-		Chat chat = new Chat("Toto");
-		chat.cri();
-		chat.test();
+		Pays fr = Pays.FR;
+		Pays uk = Pays.UK;
+
+		System.out.println(fr.getNom());
+		System.out.println(uk.getCapital());
 	}
 
 }

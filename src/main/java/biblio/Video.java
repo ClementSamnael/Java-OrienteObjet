@@ -4,16 +4,13 @@ public final class Video extends Document {
 
 	private Type typeDoc;
 
-	// -------------------------------------------------/
-	/*
-	 * Constructeur
-	 */
+	// -----------------Constructeur--------------------------------/
 	public Video(String titre, String auteur, Type typeDoc) {
 		super(titre, auteur);
 		this.typeDoc = typeDoc;
 	}
 
-	// ------------------MÉTHODES-------------------------------/
+	// ------------------@Override-------------------------------/
 	@Override
 	public boolean estEmpruntable() {
 		return true;
@@ -26,5 +23,10 @@ public final class Video extends Document {
 
 	public Type getTypeDocument() {
 		return this.typeDoc;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + " - " + this.typeDoc;
 	}
 }

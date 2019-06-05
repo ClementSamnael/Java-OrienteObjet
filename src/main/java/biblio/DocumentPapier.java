@@ -35,4 +35,9 @@ public abstract class DocumentPapier extends Document {
 		return this.coutDoc = 0.5f * nbPages;
 	}
 
+	@Override
+	public String toString() {
+		return super.toString() + " - " + " Nombre de pages : " + this.nbPages;
+	}
+
 }

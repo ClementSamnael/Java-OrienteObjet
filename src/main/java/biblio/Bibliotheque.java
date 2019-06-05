@@ -1,8 +1,10 @@
 package biblio;
 
+import java.util.ArrayList;
+
 public final class Bibliotheque {
 
-	// private ArrayList<Document> document;
+	private ArrayList<Document> doc;
 
 	// -------------------------------------------------/
 	/*
@@ -36,46 +38,44 @@ public final class Bibliotheque {
 //		this.document.add(doc);
 //	}
 
-//	public int nbDVD() {
-//		int nbDVD = 0;
-//		for (int i = 0; i < document.size(); i++) {
-//			if (document.get(i).getTypeDocument().equals("DVD")) {
-//				nbDVD++;
-//			}
-//		}
-//		return nbDVD;
-//	}
-
 	// ----------------CORRECTIONS---------------------------------/
 	// Correction
-	private Document[] document;
+	// private Document[] document;
 
-	/*
-	 * Construction correction
-	 */
-	public Bibliotheque() {
-		this.document = new Document[100];
+	// ----------------Constructeur---------------------------------/
+	public Bibliotheque(ArrayList<Document> doc) {
+		this.doc = doc;
 	}
 
-	public void ajoutDoc(Document doc) {
-		for (int i = 0; i < document.length; i++) {
-
-			if (document[i] == null) {
-				document[i] = doc;
-				break;
+//	public void ajoutDoc(Document doc) {
+//		for (int i = 0; i < doc.length; i++) {
+//
+//			if (doc[i] == null) {
+//				doc[i] = doc;
+//				break;
+//			}
+//		}
+//	}
+//
+//	public int getNbDVD() {
+//		int sum = 0;
+//		for (int i = 0; i < doc.length; i++) {
+//			if (doc[i] != null && doc[i] instanceof Video) {
+//				if (((Video) doc[i]).getTypeDocument().equals("DVD")) {
+//					sum++;
+//				}
+//			}
+//		}
+//		return sum;
+//	}
+	public int getnbDVD() {
+		int nbDVD = 0;
+		for (int i = 0; i < doc.size(); i++) {
+			if (doc.get(i).getTypeDoc().equals("DVD")) {
+				nbDVD++;
 			}
 		}
+		return nbDVD;
 	}
 
-	public int getNbDVD() {
-		int sum = 0;
-		for (int i = 0; i < document.length; i++) {
-			if (document[i] != null && document[i] instanceof Video) {
-				if (((Video) document[i]).getTypeDocument().equals("DVD")) {
-					sum++;
-				}
-			}
-		}
-		return sum;
-	}
 }

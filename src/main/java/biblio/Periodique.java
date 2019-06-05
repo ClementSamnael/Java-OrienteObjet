@@ -37,4 +37,9 @@ public class Periodique extends DocumentPapier {
 	public boolean estEmpruntable() {
 		return false;
 	}
+
+	@Override
+	public String toString() {
+		return super.toString() + " - " + " - le numéro : " + this.numero;
+	}
 }

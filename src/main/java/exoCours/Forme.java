@@ -14,10 +14,11 @@ public abstract class Forme {
 		return centre;
 	}
 
-	// -------------------------------------/
+	// ----------------@Override---------------------/
+
 	@Override
 	public String toString() {
-		return "Forme de type : " + getType() + "Perimetre : " + getPerimetre() + " Aire : " + getAire();
+		return "Forme de type : " + getType() + " - Perimetre : " + getPerimetre() + " - Aire : " + getAire();
 	}
 
 	// --------------MÉTHODES ABSTRAITES------------------/

@@ -7,7 +7,6 @@ public abstract class Document {
 	 */
 	protected String titre;
 	protected String auteur;
-	protected boolean empruntable;
 	protected float coutDoc;
 
 	/*
@@ -31,14 +30,7 @@ public abstract class Document {
 		return auteur;
 	}
 
-	public boolean isEmpruntable() {
-		return empruntable;
-	}
-
-	// -------------------------------------------------/
-	/*
-	 * Setter
-	 */
+	// --------------------Setter-----------------------------/
 	public void setTitre(String titre) {
 		this.titre = titre;
 	}
@@ -47,8 +39,11 @@ public abstract class Document {
 		this.auteur = auteur;
 	}
 
-	public void setEmpruntable(boolean empruntable) {
-		this.empruntable = empruntable;
+	// -------------------@Override------------------------------/
+
+	@Override
+	public String toString() {
+		return this.titre + " - " + this.auteur;
 	}
 
 	// -------------------MÉTHODES ABSTRAITES------------------------------/

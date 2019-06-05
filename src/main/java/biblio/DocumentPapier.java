@@ -8,8 +8,8 @@ public abstract class DocumentPapier extends Document {
 	/*
 	 * Constructeur
 	 */
-	public DocumentPapier(String titre, String auteur, float coutDoc, int nbPages, Type doc) {
-		super(titre, auteur, coutDoc, doc);
+	public DocumentPapier(String titre, String auteur, int nbPages) {
+		super(titre, auteur);
 		this.nbPages = nbPages;
 	}
 

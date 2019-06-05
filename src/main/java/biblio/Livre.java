@@ -4,8 +4,8 @@ public class Livre extends DocumentPapier {
 
 	private boolean empruntable;
 
-	public Livre(String titre, String auteur, boolean empruntable, float coutDocEcrit, int nbPages, Type doc) {
-		super(titre, auteur, coutDocEcrit, nbPages, doc);
+	public Livre(String titre, String auteur, boolean empruntable, int nbPages) {
+		super(titre, auteur, nbPages);
 		this.empruntable = empruntable;
 
 	}
@@ -15,10 +15,4 @@ public class Livre extends DocumentPapier {
 	public boolean estEmpruntable() {
 		return false;
 	}
-
-	@Override
-	public String getTypeDocument() {
-		return Type.Livre.choixType();
-	}
-
 }

@@ -9,16 +9,14 @@ public abstract class Document {
 	protected String auteur;
 	protected boolean empruntable;
 	protected float coutDoc;
-	protected Type type;
 
 	/*
 	 * Constructeur de doc
 	 */
-	public Document(String titre, String auteur, float coutDoc, Type type) {
+	public Document(String titre, String auteur) {
 		this.titre = titre;
 		this.auteur = auteur;
-		this.coutDoc = coutDoc;
-		this.type = type;
+
 	}
 
 	// -------------------------------------------------/
@@ -37,10 +35,6 @@ public abstract class Document {
 		return empruntable;
 	}
 
-	public float getCoutDoc() {
-		return coutDoc;
-	}
-
 	// -------------------------------------------------/
 	/*
 	 * Setter
@@ -57,14 +51,6 @@ public abstract class Document {
 		this.empruntable = empruntable;
 	}
 
-	public void setCoutDoc(float coutDoc) {
-		this.coutDoc = coutDoc;
-	}
-
-	public void setType(Type type) {
-		this.type = type;
-	}
-
 	// -------------------MÉTHODES ABSTRAITES------------------------------/
 	/*
 	 * Savoir si un documrnt est empruntable ou non
@@ -75,10 +61,5 @@ public abstract class Document {
 	 * Connaitre le cout d'un doc
 	 */
 	public abstract float coutDocument();
-
-	/*
-	 * Récupérer le type de document
-	 */
-	public abstract String getTypeDocument();
 
 }

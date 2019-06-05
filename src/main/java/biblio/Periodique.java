@@ -1,6 +1,6 @@
 package biblio;
 
-public class Périodique extends DocumentPapier {
+public class Periodique extends DocumentPapier {
 
 	/*
 	 * Variables spécifiques
@@ -11,8 +11,8 @@ public class Périodique extends DocumentPapier {
 	/*
 	 * Constructeur
 	 */
-	public Périodique(String titre, String auteur, float coutDoc, int nbPages, int numero, Type type) {
-		super(titre, auteur, coutDoc, nbPages, type);
+	public Periodique(String titre, String auteur, int nbPages, int numero) {
+		super(titre, auteur, nbPages);
 		this.numero = numero;
 	}
 
@@ -36,10 +36,5 @@ public class Périodique extends DocumentPapier {
 	@Override
 	public boolean estEmpruntable() {
 		return false;
-	}
-
-	@Override
-	public String getTypeDocument() {
-		return Type.Livre.choixType();
 	}
 }

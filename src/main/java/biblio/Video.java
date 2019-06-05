@@ -2,12 +2,15 @@ package biblio;
 
 public final class Video extends Document {
 
+	private Type typeDoc;
+
 	// -------------------------------------------------/
 	/*
 	 * Constructeur
 	 */
-	public Video(String titre, String auteur, float coutDoc, Type type) {
-		super(titre, auteur, coutDoc, type);
+	public Video(String titre, String auteur, Type typeDoc) {
+		super(titre, auteur);
+		this.typeDoc = typeDoc;
 	}
 
 	// ------------------MÉTHODES-------------------------------/
@@ -21,8 +24,7 @@ public final class Video extends Document {
 		return 70.0F;
 	}
 
-	@Override
-	public String getTypeDocument() {
-		return Type.DVD.choixType();
+	public Type getTypeDocument() {
+		return this.typeDoc;
 	}
 }

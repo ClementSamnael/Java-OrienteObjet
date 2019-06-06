@@ -49,15 +49,14 @@ public class Banque implements Serializable {
 	/*
 	 * Recherche totale ou partielle d'un proprietaire
 	 */
-	public void rechercheProprio() {
-		scanner = new Scanner(System.in);
-		System.out.println("Saisissez un proprietaire : ");
-		String scP = scanner.nextLine();
-		if (prorietaire.contains(scP)) {
-			System.out.println("Le proprietaire " + scP + " est présent");
+	public ArrayList<Proprietaire> rechercheProprio(String proprio) {
+		ArrayList<Proprietaire> listProprio = new ArrayList<Proprietaire>();
+		for (Proprietaire unProprio : listProprio) {
+			if (prorietaire.contains(unProprio)) {
+				listProprio.add(unProprio);
+			}
 		}
-		System.out.println("Le proprietaire" + scP + " est inconnu");
-		scanner.close();
+		return listProprio;
 	}
 
 	/*
@@ -76,12 +75,14 @@ public class Banque implements Serializable {
 	/*
 	 * Tous les comptes à découvert
 	 */
-	public void comptesDecouverts() {
-		for (int i = 0; i < compte.size(); i++) {
-			if (compte.get(i).comptesDecouvert()) {
-				System.out.println(compte.get(i));
+	public ArrayList<Compte> comptesDecouverts() {
+		ArrayList<Compte> compteDecouvert = new ArrayList<Compte>();
+		for (Compte unCompte : compte) {
+			if (unCompte.getMontant() < 0) {
+				compteDecouvert.add(unCompte);
 			}
 		}
+		return compteDecouvert;
 	}
 
 	/*

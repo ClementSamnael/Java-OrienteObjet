@@ -1,9 +1,15 @@
 package banque;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public abstract class Proprietaire {
 
 	protected String nomProprio;
 	protected String adrProprio;
+
+	protected static Pattern pattern;
+	protected static Matcher matcher;
 
 //----------------CONSTRUCTEUR-------------------------\\
 	public Proprietaire(String nomProprio, String adrProprio) {
@@ -29,9 +35,12 @@ public abstract class Proprietaire {
 		this.adrProprio = adrProprio;
 	}
 
+	// ----------------MÉTHODES-------------------------\\
+
 	// -------------@Override----------------------------\\
 	@Override
 	public String toString() {
-		return ("Le proprietaire a pour nom : " + this.nomProprio + ", il vit a : " + this.adrProprio);
+		return ("Le proprietaire a pour nom : " + this.nomProprio + ", situé au : " + this.adrProprio);
 	}
+
 }

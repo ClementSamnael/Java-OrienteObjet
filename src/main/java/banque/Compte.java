@@ -2,21 +2,24 @@ package banque;
 
 public abstract class Compte {
 
-	protected String proprio;
+	protected Proprietaire proprio;
 	protected static int numeroCpt;
-	protected float montant;
+	protected float montant;// solde
 	protected float min;// plancher
 	protected float max;// plafond
 
 	// ----------------CONSTRUCTEUR-------------------------\\
-	public Compte(String proprio, int numeroCpt, float montant) {
+	public Compte(Proprietaire proprio, int numeroCpt, float montant) throws Exception {
 		this.proprio = proprio;
 		Compte.numeroCpt = numeroCpt;
 		this.montant = montant;
+		if (montant < 0) {
+			throw new Exception("Error, impossible de créer le compte");
+		}
 	}
 
 	// ----------------GETTER-------------------------\\
-	public String getProprio() {
+	public Proprietaire getProprio() {
 		return this.proprio;
 	}
 
@@ -29,7 +32,7 @@ public abstract class Compte {
 	}
 
 	// ----------------SETTER-------------------------\\
-	public void setProprio(String proprio) {
+	public void setProprio(Proprietaire proprio) {
 		this.proprio = proprio;
 	}
 
@@ -46,8 +49,11 @@ public abstract class Compte {
 
 	public abstract float getMax();
 
-	// ----------------MÉTHODES-------------------------\\
+	public abstract float calculInterets();
 
+	public abstract boolean comptesDecouvert();
+
+	// ----------------MÉTHODES-------------------------\\
 	/*
 	 * Versement d'espèces
 	 */
@@ -72,7 +78,7 @@ public abstract class Compte {
 			versementEsp(cptReceveur);
 		} else {
 			versementEsp(cptReceveur);
-			this.montant = this.montant - 1.0f;
+			this.montant -= 1.0f;
 		}
 		return this.montant;
 	}

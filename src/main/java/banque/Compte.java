@@ -2,22 +2,22 @@ package banque;
 
 public abstract class Compte {
 
-	protected Propriotaire proprio;
-	protected int numeroCpt;
+	protected String proprio;
+	protected static int numeroCpt;
 	protected float montant;
-	protected float min;
-	protected float max;
+	protected float min;// plancher
+	protected float max;// plafond
 
 	// ----------------CONSTRUCTEUR-------------------------\\
-	public Compte(Propriotaire proprio, int numeroCpt, float montant) {
+	public Compte(String proprio, int numeroCpt, float montant) {
 		this.proprio = proprio;
-		this.numeroCpt = numeroCpt;
+		Compte.numeroCpt = numeroCpt;
 		this.montant = montant;
 	}
 
 	// ----------------GETTER-------------------------\\
-	public Propriotaire getProprio() {
-		return proprio;
+	public String getProprio() {
+		return this.proprio;
 	}
 
 	public int getNumeroCpt() {
@@ -29,12 +29,12 @@ public abstract class Compte {
 	}
 
 	// ----------------SETTER-------------------------\\
-	public void setProprio(Propriotaire proprio) {
+	public void setProprio(String proprio) {
 		this.proprio = proprio;
 	}
 
 	public void setNumeroCpt(int numeroCpt) {
-		this.numeroCpt = numeroCpt;
+		Compte.numeroCpt = numeroCpt;
 	}
 
 	public void setMontant(float montant) {
@@ -68,12 +68,19 @@ public abstract class Compte {
 	 * Virement d'un compte à un compte
 	 */
 	public float virement(int cptReceveur, float retrait) {
-		if (this.numeroCpt == cptReceveur) {
+		if (Compte.numeroCpt == cptReceveur) {
 			versementEsp(cptReceveur);
 		} else {
 			versementEsp(cptReceveur);
 			this.montant = this.montant - 1.0f;
 		}
 		return this.montant;
+	}
+
+	// ----------------@Override-------------------------\\
+	@Override
+	public String toString() {
+		return ("Un compte a pour proprietaire : " + this.proprio + ", a pour numero de compte : " + Compte.numeroCpt
+				+ ", pour montant : " + this.montant + "€");
 	}
 }

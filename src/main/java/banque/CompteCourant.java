@@ -5,12 +5,12 @@ public class CompteCourant extends Compte {
 	private float decouvert;
 
 	// ----------------CONSTRUCTEURS-------------------------\\
-	public CompteCourant(Propriotaire proprio, int numeroCpt, int montant, float decouvert) {
+	public CompteCourant(String proprio, int numeroCpt, float montant, float decouvert) {
 		super(proprio, numeroCpt, montant);
 		this.decouvert = decouvert;
 	}
 
-	public CompteCourant(Propriotaire proprio, int numeroCpt, float montant, float decouvert) {
+	public CompteCourant(String proprio, int numeroCpt, float montant) {
 		super(proprio, numeroCpt, montant);
 		this.decouvert = 0;
 	}
@@ -55,5 +55,11 @@ public class CompteCourant extends Compte {
 			retrait(retrait);
 		}
 		return this.montant;
+	}
+
+	// ----------------@Override-------------------------\\
+	@Override
+	public String toString() {
+		return (super.toString() + ". Un découvert de : " + this.decouvert + " euros est autorisé");
 	}
 }

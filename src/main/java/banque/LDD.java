@@ -4,7 +4,7 @@ public class LDD extends Compte {
 
 	private final float INTERET = 1 / 100f;
 
-	public LDD(Propriotaire proprio, int numeroCpt, int montant) {
+	public LDD(String proprio, int numeroCpt, float montant) {
 		super(proprio, numeroCpt, montant);
 	}
 

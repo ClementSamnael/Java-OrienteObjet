@@ -4,7 +4,7 @@ public class LEP extends Compte {
 
 	private final float INTERET = 1.5f / 100f;
 
-	public LEP(Propriotaire proprio, int numeroCpt, int montant) {
+	public LEP(String proprio, int numeroCpt, float montant) {
 		super(proprio, numeroCpt, montant);
 	}
 

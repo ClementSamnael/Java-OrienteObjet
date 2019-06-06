@@ -1,18 +1,14 @@
 package banque;
 
-import java.util.Date;
-
-public abstract class Propriotaire {
+public abstract class Proprietaire {
 
 	protected String nomProprio;
 	protected String adrProprio;
-	protected Date ddnProprio;
 
 //----------------CONSTRUCTEUR-------------------------\\
-	public Propriotaire(String nomProprio, String adrProprio, Date ddnProprio) {
+	public Proprietaire(String nomProprio, String adrProprio) {
 		this.nomProprio = nomProprio;
 		this.adrProprio = adrProprio;
-		this.ddnProprio = ddnProprio;
 	}
 
 	// -----------------GETTER------------------------\\
@@ -24,10 +20,6 @@ public abstract class Propriotaire {
 		return adrProprio;
 	}
 
-	public Date getDdnProprio() {
-		return ddnProprio;
-	}
-
 	// ---------------SETTER--------------------------\\
 	public void setNomProprio(String nomProprio) {
 		this.nomProprio = nomProprio;
@@ -37,10 +29,9 @@ public abstract class Propriotaire {
 		this.adrProprio = adrProprio;
 	}
 
-	public void setDdnProprio(Date ddnProprio) {
-		this.ddnProprio = ddnProprio;
+	// -------------@Override----------------------------\\
+	@Override
+	public String toString() {
+		return ("Le proprietaire a pour nom : " + this.nomProprio + ", il vit a : " + this.adrProprio);
 	}
-
-	// ---------------MÉTHODES ABSTARITES--------------------------\\
-
 }

@@ -1,22 +1,12 @@
 package banque;
 
-public class LDD extends Compte {
+public final class LDD extends Compte {
 
 	private float txInteret;
 
-	public LDD(Proprietaire proprio, int numeroCpt, float montant) throws Exception {
-		super(proprio, numeroCpt, montant);
-		this.txInteret = 0.01F;
-	}
-
-	// -----------------GETTER------------------------\\
-	public float getTxInteret() {
-		return txInteret;
-	}
-
-	// ---------------SETTER--------------------------\\
-	public void setTxInteret(float txInteret) {
-		this.txInteret = txInteret;
+	public LDD(Proprietaire proprio, float montant) throws Exception {
+		super(proprio, montant);
+		this.interet = 0.01F;
 	}
 
 	// -----------------@Override------------------------\\
@@ -28,11 +18,6 @@ public class LDD extends Compte {
 	@Override
 	public float getMax() {
 		return 12000.0f;
-	}
-
-	@Override
-	public float calculInterets() {
-		return this.montant += (this.montant * 1) / 100;
 	}
 
 	@Override

@@ -2,20 +2,18 @@ package banque;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class Banque implements Serializable {
+public final class Banque implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	private ArrayList<Proprietaire> prorietaire;
 	private ArrayList<Compte> compte;
-	private Scanner scanner;
 
 	// ----------------CONSTRUCTEUR-------------------------\\
 	public Banque(ArrayList<Proprietaire> prorietaire, ArrayList<Compte> compte) {
-		this.prorietaire = new ArrayList<Proprietaire>(prorietaire);
-		this.compte = new ArrayList<Compte>(compte);
+		this.prorietaire = new ArrayList<>();
+		this.compte = new ArrayList<>();
 	}
 
 	// -----------------GETTER------------------------\\
@@ -41,34 +39,28 @@ public class Banque implements Serializable {
 	 * Appilcation des intérets (pour LDD et LEP) Ajoute les intérets au compte
 	 */
 	public void appliquerInterets() {
-		for (int i = 0; i < compte.size(); i++) {
-			compte.get(i).calculInterets();
+		for (Compte compte : this.compte) {
+			compte.appliquerInterets();
 		}
 	}
 
 	/*
 	 * Recherche totale ou partielle d'un proprietaire
 	 */
-	public ArrayList<Proprietaire> rechercheProprio(String proprio) {
-		ArrayList<Proprietaire> listProprio = new ArrayList<Proprietaire>();
-		for (Proprietaire unProprio : listProprio) {
+	public ArrayList<Proprietaire> rechercheProprio(String nom) {
+		ArrayList<Proprietaire> recherche = new ArrayList<>();
+		for (Proprietaire unProprio : this.prorietaire) {
 			if (prorietaire.contains(unProprio)) {
-				listProprio.add(unProprio);
+				recherche.add(unProprio);
 			}
 		}
-		return listProprio;
+		return recherche;
 	}
 
 	/*
 	 * Tous les comptes d'un proprietaires
 	 */
-	public int compteDUnProprio(Proprietaire proprio) {
-		int nbCompte = 0;
-		for (int i = 0; i < compte.size(); i++) {
-			if (compte.get(i).getProprio().equals(proprio)) {
-				nbCompte++;
-			}
-		}
+	public ArrayList<Proprietaire> compteDUnProprio(Proprietaire proprio) {
 		return nbCompte;
 	}
 

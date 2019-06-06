@@ -1,6 +1,6 @@
 package banque;
 
-public class Societe extends Proprietaire {
+public final class Societe extends Proprietaire {
 
 	private String nomSoc;
 
@@ -24,5 +24,10 @@ public class Societe extends Proprietaire {
 	@Override
 	public String toString() {
 		return super.toString() + ". Le nom de la société est : " + this.nomSoc;
+	}
+
+	@Override
+	public String type() {
+		return "Societe";
 	}
 }

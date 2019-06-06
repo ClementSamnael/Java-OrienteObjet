@@ -1,20 +1,18 @@
 package banque;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.ArrayList;
 
 public abstract class Proprietaire {
 
 	protected String nomProprio;
 	protected String adrProprio;
-
-	protected static Pattern pattern;
-	protected static Matcher matcher;
+	protected ArrayList<Compte> comptes;
 
 //----------------CONSTRUCTEUR-------------------------\\
 	public Proprietaire(String nomProprio, String adrProprio) {
 		this.nomProprio = nomProprio;
 		this.adrProprio = adrProprio;
+		this.comptes = new ArrayList<>();
 	}
 
 	// -----------------GETTER------------------------\\
@@ -24,6 +22,10 @@ public abstract class Proprietaire {
 
 	public String getAdrProprio() {
 		return adrProprio;
+	}
+
+	public ArrayList<Compte> getComptes() {
+		return comptes;
 	}
 
 	// ---------------SETTER--------------------------\\
@@ -36,6 +38,7 @@ public abstract class Proprietaire {
 	}
 
 	// ----------------MÉTHODES-------------------------\\
+	public abstract String type();
 
 	// -------------@Override----------------------------\\
 	@Override

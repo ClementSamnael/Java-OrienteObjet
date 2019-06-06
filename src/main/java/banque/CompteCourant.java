@@ -1,28 +1,18 @@
 package banque;
 
-public class CompteCourant extends Compte {
+public final class CompteCourant extends Compte {
 
 	private float decouvert;
 
 	// ----------------CONSTRUCTEURS-------------------------\\
-	public CompteCourant(Proprietaire proprio, int numeroCpt, float montant, float decouvert) throws Exception {
-		super(proprio, numeroCpt, montant);
+	public CompteCourant(Proprietaire proprio, float montant, float decouvert) throws Exception {
+		super(proprio, montant);
 		this.decouvert = decouvert;
+		this.interet = 0;
 	}
 
-	public CompteCourant(Proprietaire proprio, int numeroCpt, float montant) throws Exception {
-		super(proprio, numeroCpt, montant);
-		this.decouvert = 0;
-	}
-
-	// -----------------GETTER------------------------\\
-	public float getDecouvert() {
-		return decouvert;
-	}
-
-	// ---------------SETTER--------------------------\\
-	public void setDecouvert(float decouvert) {
-		this.decouvert = decouvert;
+	public CompteCourant(Proprietaire proprio, float montant) throws Exception {
+		this(proprio, montant, 0);
 	}
 
 	// ---------------MÉTHODES---------------------------\\
@@ -47,6 +37,11 @@ public class CompteCourant extends Compte {
 	}
 
 	// ----------------@Override-------------------------\\
+	@Override
+	public float getMin() {
+		return this.decouvert;
+	}
+
 	@Override
 	public float getMin() {
 		return this.min;

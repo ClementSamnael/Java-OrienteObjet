@@ -1,23 +1,23 @@
 package banque;
 
 //Propretaire physique
-public class Particulier extends Proprietaire {
+public final class Particulier extends Proprietaire {
 
-	private int dateNaissance;// Annee de naissance
+	private String dateNaissance;// Annee de naissance
 
 	// ----------------CONSTRUCTEUR-------------------------\\
-	public Particulier(String nomProprio, String adrProprio, int ddn) {
+	public Particulier(String nomProprio, String adrProprio, String ddn) {
 		super(nomProprio, adrProprio);
 		this.dateNaissance = ddn;
 	}
 
 	// -----------------GETTER------------------------\\
-	public int getDateNaissance() {
+	public String getDateNaissance() {
 		return dateNaissance;
 	}
 
 	// ---------------SETTER--------------------------\\
-	public void setDateNaissance(int dateNaissance) {
+	public void setDateNaissance(String dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
 
@@ -25,5 +25,10 @@ public class Particulier extends Proprietaire {
 	@Override
 	public String toString() {
 		return super.toString() + ". Ce particulier est né en : " + this.dateNaissance;
+	}
+
+	@Override
+	public String type() {
+		return "Particulier";
 	}
 }

@@ -8,7 +8,7 @@ public class Main {
 
 		Societe societe = new Societe("Celine Girard", "Rue Jacques Brel", "DTA");
 		System.out.println(societe);
-		Particulier particulier = new Particulier("Clement", "Rue des Freres Lumieres", 1992);
+		Particulier particulier = new Particulier("Clement", "Rue des Freres Lumieres", "11/06/1992");
 		System.out.println(particulier);
 
 		LEP lep = new LEP(societe, 1544454545, 1458.0f);

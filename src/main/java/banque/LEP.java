@@ -4,19 +4,10 @@ public class LEP extends Compte {
 
 	private float txInteret;
 
-	public LEP(Proprietaire proprio, int numeroCpt, float montant) throws Exception {
-		super(proprio, numeroCpt, montant);
-		this.txInteret = 0.015F;
-	}
+	public LEP(Particulier particulier, float montant) throws Exception {
+		super(particulier, montant);
 
-	// -----------------GETTER------------------------\\
-	public float getTxInteret() {
-		return txInteret;
-	}
-
-	// ---------------SETTER--------------------------\\
-	public void setTxInteret(float txInteret) {
-		this.txInteret = txInteret;
+		this.interet = 0.015F;
 	}
 
 	// -----------------@Override------------------------\\
@@ -28,11 +19,6 @@ public class LEP extends Compte {
 	@Override
 	public float getMax() {
 		return 7700.0f;
-	}
-
-	@Override
-	public float calculInterets() {
-		return this.montant += (this.montant * 1.5) / 100;
 	}
 
 	@Override

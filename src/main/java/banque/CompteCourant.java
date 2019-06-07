@@ -7,7 +7,7 @@ public final class CompteCourant extends Compte {
 	// ----------------CONSTRUCTEURS-------------------------\\
 	public CompteCourant(Proprietaire proprio, float montant, float decouvert) throws Exception {
 		super(proprio, montant);
-		this.decouvert = decouvert;
+		this.decouvert = Math.abs(decouvert);
 		this.interet = 0;
 	}
 
@@ -38,18 +38,8 @@ public final class CompteCourant extends Compte {
 
 	// ----------------@Override-------------------------\\
 	@Override
-	public float getMin() {
-		return this.decouvert;
-	}
-
-	@Override
-	public float getMin() {
-		return this.min;
-	}
-
-	@Override
 	public float getMax() {
-		return this.min;
+		return this.max;
 	}
 
 	@Override
@@ -58,15 +48,15 @@ public final class CompteCourant extends Compte {
 	}
 
 	@Override
-	public float calculInterets() {
-		return 0;
-	}
-
-	@Override
 	public boolean comptesDecouvert() {
 		if (this.montant < this.decouvert) {
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	public float getMin() {
+		return this.min;
 	}
 }

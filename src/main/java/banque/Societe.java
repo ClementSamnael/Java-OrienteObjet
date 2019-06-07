@@ -2,32 +2,32 @@ package banque;
 
 public final class Societe extends Proprietaire {
 
-	private String nomSoc;
+	private String nomGerant;
 
 	// ----------------CONSTRUCTEUR-------------------------\\
-	public Societe(String nomProprio, String adrProprio, String nomSoc) {
+	public Societe(String nomProprio, String adrProprio, String nomGerant) {
 		super(nomProprio, adrProprio);
-		this.nomSoc = nomSoc;
+		this.nomGerant = nomGerant;
 	}
 
 	// -----------------GETTER------------------------\\
-	public String getNomSoc() {
-		return nomSoc;
+	public String getNomGerant() {
+		return nomGerant;
 	}
 
 	// ---------------SETTER--------------------------\\
-	public void setNomSoc(String nomSoc) {
-		this.nomSoc = nomSoc;
+	public void setNomGerant(String nomGerant) {
+		this.nomGerant = nomGerant;
 	}
 
 	// -------------@Override----------------------------\\
 	@Override
 	public String toString() {
-		return super.toString() + ". Le nom de la société est : " + this.nomSoc;
+		return super.toString() + ". Le nom de la société est : " + this.nomGerant;
 	}
 
 	@Override
-	public String type() {
+	public String getType() {
 		return "Societe";
 	}
 }

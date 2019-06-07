@@ -38,7 +38,7 @@ public abstract class Proprietaire {
 	}
 
 	// ----------------MÉTHODES-------------------------\\
-	public abstract String type();
+	public abstract String getType();
 
 	// -------------@Override----------------------------\\
 	@Override

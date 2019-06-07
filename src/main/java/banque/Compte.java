@@ -12,13 +12,13 @@ public abstract class Compte {
 
 	// ----------------CONSTRUCTEUR-------------------------\\
 	public Compte(Proprietaire proprio, float montant) throws Exception {
-		this.proprio = proprio;
-		this.numeroCpt = compteur++;
-		this.montant = montant;
 		if (montant < 0) {
 			throw new Exception("Error, impossible de créer le compte");
 		}
 		this.proprio.getComptes().add(this);
+		this.proprio = proprio;
+		this.numeroCpt = compteur++;
+		this.montant = montant;
 	}
 
 	// ----------------GETTER-------------------------\\
@@ -80,13 +80,18 @@ public abstract class Compte {
 		if (!this.proprio.equals(compte.getProprio())) {
 			taxe = 1;
 		}
-		this.retrait(retrait);
+		this.retrait(retrait + taxe);
 		compte.versementEsp(retrait);
-
+		try {
+			compte.versementEsp(retrait);
+		} catch (Exception e) {
+			compte.versementEsp(retrait + taxe);
+			throw e;
+		}
 	}
 
 	public void appliquerInterets() {
-		this.montant += 1 + this.interet;
+		this.montant *= 1 + this.interet;
 	}
 
 	// ----------------@Override-------------------------\\

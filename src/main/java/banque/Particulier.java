@@ -28,7 +28,7 @@ public final class Particulier extends Proprietaire {
 	}
 
 	@Override
-	public String type() {
+	public String getType() {
 		return "Particulier";
 	}
 }
